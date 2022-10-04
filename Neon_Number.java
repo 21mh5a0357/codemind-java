@@ -3,17 +3,17 @@ class Main
 {
     public static boolean neon(int n)
     {
-        int prod,r,count=0;
+        int prod,r,sum=0;
         int temp=n;
         prod=n*n;
         while(prod>0)
         {
             r=prod%10;
-            count=count+r;
+            sum=sum+r;
             prod=prod/10;
             
         }
-        if(count==temp)
+        if(sum==temp)
         return true;
         else
         return false;
