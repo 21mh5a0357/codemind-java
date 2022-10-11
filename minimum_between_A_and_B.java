@@ -1,29 +1,49 @@
-import java.util.*;
-class Sample
+
+import java.util.Scanner;
+class Main
 {
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int n,x[],count=0,a,b,i;
+        int n,x[],a,b,found=0,k=0,y[],min=0;
         n=sc.nextInt();
         x=new int[n];
-        for(i=0;i<n;i++)
-        x[i]=sc.nextInt();
+        y=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            x[i]=sc.nextInt();
+        }
         a=sc.nextInt();
         b=sc.nextInt();
-        int min=x[1];
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         {
-          if(x[i]>=a&&x[i]<=b)
-          {
-              if(min>x[i])
-              min=x[i];
-              count++;
-          }
+            if(x[i]>=a && x[i]<=b)
+            {
+               y[k++]=x[i];
+            }
         }
-        if(count==0)
-              System.out.println("-1");
-        else
+                
+        for(int j=0;j<k-1;j++)
+        {
+           if(y[j]<y[j+1])
+           min=y[j+1];
+           else
+           min=y[j];
+        }
+        
+        for(int j=0;j<k;j++)
+        {
+           if(y[j]<min)
+           min=y[j];
+           else
+           min=min;
+           found=1;
+        }
+        if(found==1)
          System.out.print(min);
+         if(found==0)
+         System.out.println("-1");
     }
 }
+
+
