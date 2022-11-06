@@ -1,86 +1,84 @@
 import java.util.Scanner;
-class sample
+class Main
 {
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
-        int n,m,x[],y[],i,c=0,j,count=0;
+        int n,m,x[],y[],c=0,count=0;
         n=sc.nextInt();
         m=sc.nextInt();
         x=new int[n];
         y=new int[m];
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         {
             x[i]=sc.nextInt();
         }
-        for(i=0;i<m;i++)
+        for(int i=0;i<m;i++)
         {
             y[i]=sc.nextInt();
         }
-        sc.close();
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         {
-            if(x[i]!=-999)
+            if(x[i]!=-99)
             {
-                for(j=0;j<n;j++)
+                for(int j=0;j<n;j++)
                 {
                     if(x[i]==x[j] && i!=j)
                     {
-                        x[j]=-999;
+                        x[j]=-99;
                     }
                 }
             }
         }
-        for(i=0;i<m;i++)
+         for(int i=0;i<m;i++)
         {
-            if(y[i]!=-999)
+            if(y[i]!=-99)
             {
-                for(j=0;j<m;j++)
+                for(int j=0;j<m;j++)
                 {
                     if(y[i]==y[j] && i!=j)
                     {
-                        y[j]=-999;
+                        y[j]=-99;
                     }
                 }
             }
         }
-        for(i=0;i<n;i++)
+        for(int i=0;i<n;i++)
         {
             c=0;
-            if(x[i]!=-999)
+            if(x[i]!=-99)
             {
-                for(j=0;j<m;j++)
-                {
-                    if(x[i]==y[j])
-                    {
-                        c=1;
-                    }
-                }
-                if(c==0)
-                {
-                    count++;
-                }
+              for(int j=0;j<m;j++)  
+              {
+                  if(x[i]==y[j])
+                  {
+                      c=1;
+                  }      
+              }
+              if(c==0)
+                  {
+                      count++;
+                  }
             }
         }
-        for(i=0;i<m;i++)
+         for(int i=0;i<m;i++)
         {
-            
-            if(y[i]!=-999)
+            if(y[i]!=-99)
             {
                 c=0;
-                for(j=0;j<n;j++)
-                {
-                    if(y[i]==x[j])
-                    {
-                        c=1;
-                    }
-                }
-                if(c==0)
-                {
-                    count++;
-                }
+              for(int j=0;j<n;j++)  
+              {
+                  if(y[i]==x[j])
+                  {
+                      c=1;
+                  }
+              }
+              if(c==0)
+                  {
+                      count++;
+                  }
             }
         }
-        System.out.print(count);
+        System.out.println(count);
     }
 }
