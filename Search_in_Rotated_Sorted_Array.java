@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Main
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),x[],k,found=0;
+        x=new int[n];
+        for(int i=0;i<n;i++)
+        x[i]=sc.nextInt();
+        k=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            if(x[i]==k){
+            System.out.print(i+" ");
+            found=1;
+            break;
+            }
+           
+            
+        }
+        if(found==0)
+        {
+            System.out.print(-1);
+        }
+    }
+}
